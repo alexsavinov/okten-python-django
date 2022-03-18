@@ -12,17 +12,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ComputerModel',
+            name='CarModel',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('brand', models.CharField(max_length=30)),
-                ('model', models.CharField(max_length=30)),
-                ('ram', models.IntegerField()),
-                ('monitor', models.IntegerField()),
+                ('price', models.IntegerField()),
+                ('year', models.IntegerField()),
             ],
             options={
-                'verbose_name': 'Computer',
-                'db_table': 'computers',
+                'verbose_name': 'Car',
+                'db_table': 'cars',
             },
         ),
     ]
