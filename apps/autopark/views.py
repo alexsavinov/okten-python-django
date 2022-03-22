@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, CreateAPIView
+from rest_framework.generics import ListCreateAPIView, CreateAPIView, RetrieveDestroyAPIView
 
 from .serializers import AutoParkSerializer
 from .models import AutoParkModel
@@ -6,6 +6,11 @@ from apps.cars.serializers import CarSerializer
 
 
 class AutoParkListCreateView(ListCreateAPIView):
+    serializer_class = AutoParkSerializer
+    queryset = AutoParkModel.objects.all()
+
+
+class AutoParkRetrieveDestroyAPIView(RetrieveDestroyAPIView):
     serializer_class = AutoParkSerializer
     queryset = AutoParkModel.objects.all()
 

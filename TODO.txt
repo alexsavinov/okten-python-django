@@ -1,7 +1,7 @@
 реализовать с помощью generics эти эндпоинты:
 
 GET localhost:8000/auto_parks/<id> достать один автопарк
-DELETE localhost:8000/auto_parks/<id>  удалить автопарк
+DELETE localhost:8000/auto_parks/<id> удалить автопарк
 POST localhost:8000/auto_parks/<autopark_id>/cars  // добавление машины по id автопарка
 GET localhost:8000/cars?autoParkId=1 // поиск машин по id автопарка
 
