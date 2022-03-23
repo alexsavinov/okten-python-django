@@ -22,6 +22,7 @@ virtualenv-clone = "==0.5.7"
 Django = "==4.0.3"
 
 [dev-packages]
+isort = "*"
 
 [requires]
 python_version = "3.10"
