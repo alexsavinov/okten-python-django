@@ -20,6 +20,7 @@ tzdata = "==2021.5"
 virtualenv = "==20.13.3"
 virtualenv-clone = "==0.5.7"
 Django = "==4.0.3"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 isort = "*"

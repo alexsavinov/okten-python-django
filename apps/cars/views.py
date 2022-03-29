@@ -1,10 +1,12 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import CarModel
 from .serializers import CarSerializer
 
 
 class CarListCreateView(ListCreateAPIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = CarSerializer
 
     def get_queryset(self):
