@@ -5,4 +5,10 @@
 ------------------------
 - pipenv in .venv
 - isort
-
+- custom user
+- profile
+- transaction
+- Django REST framework
+- Simple JWT
+- JSONRenderer
+- permissions
