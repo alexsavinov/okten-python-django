@@ -1,20 +1,17 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import CarModel
 from .serializers import CarSerializer
 
 
-class CarListCreateView(ListCreateAPIView):
+class CarListCreateView(ListAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = CarSerializer
 
     def get_queryset(self):
         qs = CarModel.objects.all()
         autoParkId = self.request.query_params.get('autoParkId', None)
-        print('self.request.query_params =', self.request.query_params)
-        print('self.request =', self.request)
-        print('autoParkId =', autoParkId)
         if autoParkId:
             qs = qs.filter(auto_park_id=autoParkId)
 
