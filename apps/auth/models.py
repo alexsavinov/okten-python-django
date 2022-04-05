@@ -1,3 +1,8 @@
-from django.db import models
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-# Create your models here.
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super(CustomTokenObtainPairSerializer, self).validate(attrs)
+        data.update({'id': self.user.id})
+        return data

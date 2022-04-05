@@ -14,13 +14,17 @@ UserModel = get_user_model()
 
 
 class UserListCreateView(ListCreateAPIView):
-    queryset = UserModel.objects.all()
     serializer_class = UserSerializer
+    queryset = UserModel.objects.all()
 
     def get_permissions(self):
         if self.request.method == 'POST':
             return AllowAny(),
         return super().get_permissions()
+
+    def get_queryset(self):
+        queryset = UserModel.objects.filter(pk=self.kwargs['pk'])
+        return queryset
 
 
 class UserToAdminView(GenericAPIView):

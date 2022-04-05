@@ -3,6 +3,7 @@
 Реализовать регистрацию и активацию через реакт
 
 ----------------------------------
-- refresh token blacklist
-
-
+- token blacklist
+- send registration email (EmailMultiAlternatives)
+- access token
+- .env.example

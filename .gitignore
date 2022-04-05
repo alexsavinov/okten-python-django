@@ -1,2 +1,7 @@
 .idea
+.env
+.venv
+storage
+Pipfile.lock
 venv
+requirements.txt

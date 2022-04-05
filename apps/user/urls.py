@@ -13,6 +13,7 @@ from .views import (
 
 urlpatterns = [
     path('', UserListCreateView.as_view(), name='user_list_create'),
+    path('/<int:pk>', UserListCreateView.as_view(), name='user_list_create'),
     # -реализовать добавление прав администратора юзеру и понижение до обычного юзера (is_staff)
     path('/<int:pk>/admin', UserToAdminView.as_view(), name='user_set_to_admin'),
     path('/<int:pk>/not_admin', AdminToUserView.as_view(), name='admin_set_to_user'),
