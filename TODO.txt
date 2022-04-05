@@ -1,9 +1,1 @@
-Повторить и разобраться с тем что было на лекции
-
-Реализовать регистрацию и активацию через реакт
-
-----------------------------------
-- token blacklist
-- send registration email (EmailMultiAlternatives)
-- access token
-- .env.example
+- activate token
