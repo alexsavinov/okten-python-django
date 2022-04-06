@@ -1,1 +1,4 @@
 - activate token
+- error handling
+- enums
+- pagination
