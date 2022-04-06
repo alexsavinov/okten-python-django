@@ -15,6 +15,7 @@ class DefaultPagination(PageNumberPagination):
         return Response({
             'total_items': count,
             'total_pages': total_pages,
+            'page_number': self.page.number,
             'prev': self.get_previous_link(),
             'next': self.get_next_link(),
             'data': data
