@@ -5,6 +5,8 @@ from django.db import models
 class AutoParkModel(models.Model):
     class Meta:
         db_table = 'autopark'
+        verbose_name = 'Autopark'
+        ordering = ('id',)
 
     name = models.CharField(max_length=30, validators=(
         V.MaxLengthValidator(30),

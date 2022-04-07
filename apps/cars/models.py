@@ -8,7 +8,7 @@ class CarModel(models.Model):
     class Meta:
         db_table = 'cars'
         verbose_name = 'Car'
-        ordering = ('-id',)
+        ordering = ('id',)
 
     brand = models.CharField(max_length=30, validators=(
         V.MaxLengthValidator(30),
