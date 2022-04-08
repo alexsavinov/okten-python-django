@@ -112,7 +112,7 @@ class AddAvatarView(UpdateAPIView):
 
 
 class ListExceptUserView(ListCreateAPIView):
-    serializer_class = UserSerializer()
+    serializer_class = UserSerializer
 
     def get_queryset(self):
         qs = UserModel.objects.all()

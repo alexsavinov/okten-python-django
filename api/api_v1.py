@@ -8,14 +8,6 @@ from rest_framework.permissions import AllowAny
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
-
-class SchemaGenerator(OpenAPISchemaGenerator):
-    def get_schema(self, request=None, public=False):
-        schema = super(SchemaGenerator, self).get_schema(request, public)
-        schema.basePath = os.path.join(schema.basePath, '/api/v1')
-        return schema
-
-
 schema_view = get_schema_view(
     openapi.Info(
         title="Autoparks API",
@@ -27,7 +19,6 @@ schema_view = get_schema_view(
     ),
     public=True,
     permission_classes=(AllowAny,),
-    generator_class=SchemaGenerator,
 )
 
 urlpatterns = [
