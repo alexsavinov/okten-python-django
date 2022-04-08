@@ -9,6 +9,7 @@ from apps.profile.serializers import AddAvatarSerializer
 
 from .permissons import IsAdmin, IsSuperUser
 from .serializers import UserSerializer
+from .filters import UserFilter
 
 UserModel = get_user_model()
 
@@ -16,20 +17,22 @@ UserModel = get_user_model()
 class UserListCreateView(ListCreateAPIView):
     serializer_class = UserSerializer
     queryset = UserModel.objects.all()
+    filterset_class = UserFilter
 
     def get_permissions(self):
         if self.request.method == 'POST':
             return AllowAny(),
         return super().get_permissions()
 
-    def get_queryset(self):
-        queryset = UserModel.objects.filter(pk=self.kwargs['pk'])
-        return queryset
+    # def get_queryset(self):
+    #     queryset = UserModel.objects.filter(pk=self.kwargs['pk'])
+    #     return queryset
 
 
 class UserToAdminView(GenericAPIView):
     permission_classes = (IsSuperUser,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -44,6 +47,7 @@ class UserToAdminView(GenericAPIView):
 class AdminToUserView(GenericAPIView):
     permission_classes = (IsSuperUser,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -58,6 +62,7 @@ class AdminToUserView(GenericAPIView):
 class ActivateUserView(GenericAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -72,6 +77,7 @@ class ActivateUserView(GenericAPIView):
 class DeactivateUserView(GenericAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -86,6 +92,7 @@ class DeactivateUserView(GenericAPIView):
 class DeleteUserView(DestroyAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def delete(self, request, *args, **kwargs):
         user = self.get_object()
@@ -93,6 +100,8 @@ class DeleteUserView(DestroyAPIView):
             raise ValueError('Cannot delete superuser')
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    serializer_class = UserSerializer
 
 
 class AddAvatarView(UpdateAPIView):
@@ -103,7 +112,7 @@ class AddAvatarView(UpdateAPIView):
 
 
 class ListExceptUserView(ListCreateAPIView):
-    serializer_class = UserSerializer
+    serializer_class = UserSerializer()
 
     def get_queryset(self):
         qs = UserModel.objects.all()

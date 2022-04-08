@@ -1,10 +1,10 @@
 from django.urls import path
 
-from .views import CarListCreateView, CarReadUpdateDeleteView
+from .views import CarDestroyView, CarListCreateView, CarReadUpdateDeleteView
 
 urlpatterns = [
     path('', CarListCreateView.as_view(), name='cars_list_create'),
-    path('?autoParkId=<int:autoParkId>', CarListCreateView.as_view(), name='cars_list_by_park_id'),
-    path('/<int:autoParkId>', CarListCreateView.as_view(), name='cars_create'),
-    path('/<int:pk>', CarReadUpdateDeleteView.as_view(), name='cars_read_update_delete')
+    path('/<int:auto_park>', CarListCreateView.as_view(), name='cars_create'),
+    path('/<int:pk>', CarReadUpdateDeleteView.as_view(), name='cars_read_update_delete'),
+    path('/<int:pk>/<int:auto_park>', CarDestroyView.as_view(), name='cars_delete')
 ]
