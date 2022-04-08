@@ -30,6 +30,7 @@ class UserListCreateView(ListCreateAPIView):
 class UserToAdminView(GenericAPIView):
     permission_classes = (IsSuperUser,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -44,6 +45,7 @@ class UserToAdminView(GenericAPIView):
 class AdminToUserView(GenericAPIView):
     permission_classes = (IsSuperUser,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -58,6 +60,7 @@ class AdminToUserView(GenericAPIView):
 class ActivateUserView(GenericAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -72,6 +75,7 @@ class ActivateUserView(GenericAPIView):
 class DeactivateUserView(GenericAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def patch(self, *args, **kwargs):
         user = self.get_object()
@@ -86,6 +90,7 @@ class DeactivateUserView(GenericAPIView):
 class DeleteUserView(DestroyAPIView):
     permission_classes = (IsAdmin,)
     queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
     def delete(self, request, *args, **kwargs):
         user = self.get_object()
