@@ -1,10 +1,10 @@
 from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from backend.apps.cars.models import CarModel
-from backend.apps.cars.serializers import CarSerializer
+from .models import CarModel
+from .serializers import CarSerializer
 from pagination.default_pagination import DefaultPagination
-from backend.apps.cars.filters import CarFilter
+from .filters import CarFilter
 
 
 class CarListCreateView(ListAPIView):

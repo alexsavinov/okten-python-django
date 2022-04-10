@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from backend.apps.profile.models import ProfileModel
+from .models import ProfileModel
 
 
 class ProfileSerializer(ModelSerializer):

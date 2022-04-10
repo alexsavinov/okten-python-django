@@ -14,7 +14,7 @@ WORKDIR /app
 RUN adduser -D user
 USER user
 
-ENV PATH="/home/user/.local/bin:${PATH}"
+ENV PATH=/home/user/.local/bin:$PATH
 
 RUN python -m pip install --upgrade pip
 
