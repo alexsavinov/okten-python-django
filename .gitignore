@@ -5,3 +5,4 @@ storage
 Pipfile.lock
 venv
 requirements.txt
+mysql
