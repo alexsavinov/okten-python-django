@@ -1,0 +1,30 @@
+.item {
+    gap: 10px;
+    max-width: 450px;
+    margin: 5px 0px;
+    padding: 5px 10px 10px 5px;
+    border: 1px silver solid;
+    border-radius: 3px;
+}
+
+.item span {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.button {
+    margin: 5px 0px 0px 0px;
+}
+
+.input_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 2px 0px 2px 0px;
+}

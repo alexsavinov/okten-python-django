@@ -1,0 +1,13 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 450px;
+    margin-top: 3px;
+    padding: 5px;
+    border-bottom: 1px silver solid;
+}
+
+.button {
+    margin-left: 3px;
+}

@@ -1,0 +1,24 @@
+.item {
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 450px;
+    margin: 5px 0px;
+    padding: 5px 10px 10px 5px;
+    border: 1px silver solid;
+    border-radius: 3px;
+}
+
+.item span {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.button {
+    margin-left: 0px;
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    margin: 5px 0px 10px 0px;
+}
