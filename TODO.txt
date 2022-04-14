@@ -1,2 +1,2 @@
-- docker
-- npm-watch
+- spam messenger
+- AWS
