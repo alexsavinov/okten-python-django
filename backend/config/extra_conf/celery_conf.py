@@ -7,6 +7,7 @@ CELERY_RESULT_SERIALIZER = "json"
 
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_IMPORTS = ('tasks.spam',)
 
 CACHES = {
     'default': {

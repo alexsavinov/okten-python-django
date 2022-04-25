@@ -29,6 +29,7 @@ django-cors-headers = "*"
 celery = {extras = ["redis"], version = "*"}
 django-celery-results = "*"
 psycopg2-binary = "*"
+django-celery-beat = "*"
 
 [dev-packages]
 isort = "*"

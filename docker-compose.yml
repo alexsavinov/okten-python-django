@@ -50,4 +50,4 @@ services:
       - .env
     restart: on-failure
     command: >
-      celery -A config worker -l info
+      celery -A config worker -l info -B
