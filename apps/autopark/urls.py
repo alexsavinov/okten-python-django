@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import AutoParkListCreateView, AutoParkAddCarView, AutoParkRetrieveDestroyAPIView
+from .views import AutoParkAddCarView, AutoParkListCreateView, AutoParkRetrieveDestroyAPIView
 
 urlpatterns = [
     path('', AutoParkListCreateView.as_view(), name='autopark_list_create'),
